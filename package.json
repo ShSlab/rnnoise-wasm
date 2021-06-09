@@ -10,7 +10,9 @@
     "scripts": {
         "build:dockerimage": "docker image inspect -f '.' emscripten-autotools || docker build -t emscripten-autotools .",
         "build:emscripten": "docker run --rm -v $(pwd):/src emscripten-autotools bash -x ./build.sh",
-        "build": "npm run build:dockerimage && npm run build:emscripten"
+        "build": "npm run build:__git_clean && npm run build:dockerimage && npm run build:emscripten && npm run build:__git_clean",
+
+        "build:__git_clean": "cd rnnoise && git clean -f -d && cd .."
     },
     "dependencies": {},
     "devDependencies": {},

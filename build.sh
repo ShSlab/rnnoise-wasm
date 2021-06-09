@@ -22,7 +22,7 @@ echo "============================================="
   cd rnnoise
 
   # Clean possible autotools clutter that might affect the configurations step
-  git clean -f -d
+  # git clean -f -d
   ./autogen.sh
 
   # For some reason setting the CFLAGS export doesn't apply optimization to all compilation steps
@@ -54,7 +54,7 @@ echo "============================================="
   mv rnnoise.wasm ../dist/
 
   # Clean cluttter
-  git clean -f -d
+  # git clean -f -d
 )
 echo "============================================="
 echo "Compiling wasm bindings done"
